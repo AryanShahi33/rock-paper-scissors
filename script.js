@@ -33,11 +33,35 @@ function playRound(humanChoice,computerChoice){
     let computerScore = 0;
     if (humanChoice == "rock" && computerChoice == "scissors")
     {
-        console.log("Rock Beats Scissors")
-        humanScore + 1;
+        console.log("rock Beats scissors")
+        humanScore++;
     }
-    else if (humanChoice == "scissors" && computerChoice = "")
-    
+    else if (humanChoice == "scissors" && computerChoice == "paper")
+    {
+        console.log("scissors beats paper")
+        humanScore++;
+    }
+    else if (humanChoice == "paper" && computerChoice == "rock")
+    {
+        console.log("paper beats rock")
+        humanScore++;
+    }
+    else if (humanChoice == "rock" && computerChoice == "paper")
+    {
+        console.log("paper beats rock")
+        computerScore++;
+    }
+    else if (humanChoice == "scissors" && computerChoice == "rock")
+    {
+        console.log("rock beats scissors")
+        computerScore++;
+    }
+    else if (humanChoice == "paper" && computerChoice == "scissors")
+    {
+        console.log("scissors beats paper")
+        computerScore++;
+    }
+    console.log(computerScore,humanScore);
 }
 // Use comparsion operators to determine the winner
 // Print out the winner
