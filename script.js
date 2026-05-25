@@ -26,10 +26,24 @@ function getHumanChoice(){
     //return the value 
     return userChoice;
 }
+// Developing logic for the actual game
+// First get the input of both user and computer in the function
+function playRound(humanChoice,computerChoice){
+    let humanScore = 0;
+    let computerScore = 0;
+    if (humanChoice == "ROCK" && computerChoice == "Scissors")
+    {
+        console.log("Rock Beats Scissors")
+        humanScore + 1;
+    }
+    
+}
+// Use comparsion operators to determine the winner
+// Print out the winner
+// Increment the score of the winner
 // get the return value and store it in a glboal variable
 let computer = getComputerChoice();
 let user  = getHumanChoice();
-console.log(computer,user);
-let humanScore = 0;
-let computerScore = 0;
+console.log(user,computer);
+playRound(user,computer);
 
