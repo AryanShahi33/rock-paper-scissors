@@ -30,4 +30,6 @@ function getHumanChoice(){
 let computer = getComputerChoice();
 let user  = getHumanChoice();
 console.log(computer,user);
+let humanScore = 0;
+let computerScore = 0;
 
