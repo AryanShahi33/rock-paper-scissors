@@ -5,13 +5,13 @@ function getComputerChoice(){
     let random = Math.floor(Math.random()*3);
     let computerChoice = "";
     if (random == 0){
-        computerChoice = "Rock";
+        computerChoice = "rock";
     }
     else if (random == 1){
-        computerChoice = "Paper";
+        computerChoice = "paper";
     }
     else {
-        computerChoice = "Scissors";
+        computerChoice = "scissors";
     }
     console.log(computerChoice);
     return computerChoice;
@@ -21,7 +21,7 @@ function getHumanChoice(){
     //ask user for input
     let userChoice = prompt("Choose between rock paper and scissors");
     //convert user input to uppercase to avoid any issues
-    let uppercase = userChoice.toUpperCase();
+    let uppercase = userChoice.toLowerCase();
     userChoice = uppercase;
     //return the value 
     return userChoice;
@@ -31,11 +31,12 @@ function getHumanChoice(){
 function playRound(humanChoice,computerChoice){
     let humanScore = 0;
     let computerScore = 0;
-    if (humanChoice == "ROCK" && computerChoice == "Scissors")
+    if (humanChoice == "rock" && computerChoice == "scissors")
     {
         console.log("Rock Beats Scissors")
         humanScore + 1;
     }
+    else if (humanChoice == "scissors" && computerChoice = "")
     
 }
 // Use comparsion operators to determine the winner
