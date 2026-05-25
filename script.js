@@ -31,9 +31,12 @@ function getHumanChoice(){
 function playRound(humanChoice,computerChoice){
     let humanScore = 0;
     let computerScore = 0;
+    // Use comparsion operators to determine the winner
     if (humanChoice == "rock" && computerChoice == "scissors")
     {
+        // Print out the winner
         console.log("rock Beats scissors")
+        // Increment the score of the winner
         humanScore++;
     }
     else if (humanChoice == "scissors" && computerChoice == "paper")
@@ -62,13 +65,25 @@ function playRound(humanChoice,computerChoice){
         computerScore++;
     }
     console.log(computerScore,humanScore);
+    return computerScore,humanScore;
 }
-// Use comparsion operators to determine the winner
-// Print out the winner
-// Increment the score of the winner
-// get the return value and store it in a glboal variable
-let computer = getComputerChoice();
-let user  = getHumanChoice();
-console.log(user,computer);
-playRound(user,computer);
 
+// loop playGame to make the game 5 rounds
+function playGame(humanScore,computerScore){
+    for (let i = 1;i<5;i++)
+    {   
+        let user = getHumanChoice();
+        let computer = getComputerChoice();
+        playRound(user,computer);
+        console.log(user,computer);
+    }
+    if (humanScore>computerScore){
+        console.log("Human wins by "+ humanScore-computerScore + "Score");
+    }
+    else {
+        console.log("Computer wins by "+ computerScore-humanScore + "Score");
+    }
+}
+let computerScore = playRound();
+let humanScore = playRound();
+playGame(humanScore,computerScore);
