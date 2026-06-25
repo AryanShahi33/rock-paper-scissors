@@ -21,63 +21,73 @@ function getComputerChoice(){
 
 // Developing logic for the actual game
 // First get the input of both user and computer in the function
-function playRound(humanChoice,computerChoice){
+function playRound(humanChoice,computerChoice,span){
 
 
     // Use comparsion operators to determine the winner
     if (humanChoice == "rock" && computerChoice == "scissors")
     {
         // Print out the winner
-        console.log("You win!,rock Beats scissors")
+        span.textContent = "You win!,rock Beats scissors \n";
         // Increment the score of the winner
         humanScore++;
     }
     else if (humanChoice == "scissors" && computerChoice == "paper")
     {
+        span.textContent = "You win!, scissors beats paper \n";
         humanScore++;
-        console.log("You win!, scissors beats paper")
     }
     else if (humanChoice == "paper" && computerChoice == "rock")
     {
+        span.textContent = "You win!, paper beats rock \n";
         humanScore++;
-        console.log("You win!, paper beats rock")
     }
     else if (humanChoice == "rock" && computerChoice == "paper")
-    {
+    {   
+        span.textContent = "You lose!, paper beats rock \n";
         computerScore++;
-        console.log("You lose!, paper beats rock")
     }
     else if (humanChoice == "scissors" && computerChoice == "rock")
     {
+        span.textContent = "You lose!, rock beats scissors \n";
         computerScore++;
-        console.log("You lose!, rock beats scissors")
     }
-    else if (humanChoice == "paper" && computerChoice == "scissors")
-    {
-        computerScore++;
-        console.log("You lose!, scissors beats paper");
+    else if (humanChoice == "paper" && computerChoice == "scissors");
+    {   
+        span.textContent = "You lose!, scissors beats paper \n";
+        console.log(humanChoice,computerChoice)
+        computerScore++;  
     }
-    return computerScore,humanScore;
+    return humanScore,computerScore;
 }
+
+let div = document.querySelector("div");
 
 let rock = document.getElementById("rock")
 rock.addEventListener('click',(event) => {
     humanChoice = "rock";
     computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
+    let span = document.createElement("span");
+    div.appendChild(span);
+    playRound(humanChoice,computerChoice,span);
 })
 
 let paper = document.getElementById("paper")
 paper.addEventListener('click',(event) => {
     humanChoice = "paper";
     computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
+    let span = document.createElement("span");
+    div.appendChild(span);
+    playRound(humanChoice,computerChoice,span);
 })
 
 let scissors = document.getElementById("scissors")
 scissors.addEventListener('click',(event) => {
     humanChoice = "scissors";
     computerChoice = getComputerChoice();
-    playRound(humanChoice,computerChoice);
+    let span = document.createElement("span");
+    div.appendChild(span);
+    playRound(humanChoice,computerChoice,span);
 });
+
 
