@@ -17,38 +17,7 @@ function getComputerChoice(){
     }
     return computerChoice;
 }
-//create a function to get input from user for rock paper or scissors
-function getHumanChoice(){
-    //ask user for input
-    let userChoice = prompt("Choose between rock paper and scissors");
-    //convert user input to uppercase to avoid any issues
-    let uppercase = userChoice.toLowerCase();
-    userChoice = uppercase;
-    //return the value 
-    return userChoice;
-}
 
-// loop playGame to make the game 5 rounds
-function playGame(){
-
-    for (let i = 1;i<=5;i++)
-    {   
-        // repeat the process of asking 5 different inputs for both human and randomize for the computer
-        let user = getHumanChoice();
-        let computer = getComputerChoice();
-        playRound(user,computer);
-        console.log(user, computer);
-    }
-    if (humanScore>computerScore){
-        console.log("Human wins");
-    }
-    else if (computerScore>humanScore) {
-        console.log("Computer wins");
-    }
-    else {
-        console.log("Draw");
-    }
-}
 
 // Developing logic for the actual game
 // First get the input of both user and computer in the function
@@ -91,5 +60,18 @@ function playRound(humanChoice,computerChoice){
     return computerScore,humanScore;
 }
 
+let rock = document.getElementById("rock")
+rock.addEventListener('click',(event) => {
+    humanChoice = "rock";
+})
 
-playGame();
+let paper = document.getElementById("paper")
+paper.addEventListener('click',(event) => {
+    humanChoice = "paper";
+})
+
+let scissors = document.getElementById("scissors")
+scissors.addEventListener('click',(event) => {
+    humanChoice = "scissors";
+});
+
