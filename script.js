@@ -21,7 +21,7 @@ function getComputerChoice(){
 
 // Developing logic for the actual game
 // First get the input of both user and computer in the function
-function playRound(humanChoice,computerChoice,span){
+function playRound(humanChoice,computerChoice,span,score){
 
 
     // Use comparsion operators to determine the winner
@@ -31,6 +31,8 @@ function playRound(humanChoice,computerChoice,span){
         span.textContent = "You win!,rock Beats scissors \n";
         // Increment the score of the winner
         humanScore++;
+        score.textContent = humanScore;
+        score.textContent = computerScore;
     }
     else if (humanChoice == "scissors" && computerChoice == "paper")
     {
@@ -52,11 +54,10 @@ function playRound(humanChoice,computerChoice,span){
         span.textContent = "You lose!, rock beats scissors \n";
         computerScore++;
     }
-    else if (humanChoice == "paper" && computerChoice == "scissors");
-    {   
-        span.textContent = "You lose!, scissors beats paper \n";
-        console.log(humanChoice,computerChoice)
-        computerScore++;  
+    else if (humanChoice == "paper" && computerChoice == "scissors")
+    {
+        span.textContent = "You lose!, scissors beats paper";
+        computerScore++;
     }
     return humanScore,computerScore;
 }
@@ -68,8 +69,10 @@ rock.addEventListener('click',(event) => {
     humanChoice = "rock";
     computerChoice = getComputerChoice();
     let span = document.createElement("span");
-    div.appendChild(span);
-    playRound(humanChoice,computerChoice,span);
+    let score = document.createElement("span")
+    div.appendChild(span)
+    div.appendChild(score);
+    playRound(humanChoice,computerChoice,span,score);
 })
 
 let paper = document.getElementById("paper")
@@ -77,8 +80,10 @@ paper.addEventListener('click',(event) => {
     humanChoice = "paper";
     computerChoice = getComputerChoice();
     let span = document.createElement("span");
+    let score = document.createElement("span");
     div.appendChild(span);
-    playRound(humanChoice,computerChoice,span);
+    div.appendChild(score)
+    playRound(humanChoice,computerChoice,span,score);
 })
 
 let scissors = document.getElementById("scissors")
@@ -86,8 +91,10 @@ scissors.addEventListener('click',(event) => {
     humanChoice = "scissors";
     computerChoice = getComputerChoice();
     let span = document.createElement("span");
+    let score = document.creeateElement("span");
     div.appendChild(span);
-    playRound(humanChoice,computerChoice,span);
+    div.appendChild(score);
+    playRound(humanChoice,computerChoice,span,score);
 });
 
 
