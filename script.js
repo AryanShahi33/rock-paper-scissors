@@ -63,15 +63,21 @@ function playRound(humanChoice,computerChoice){
 let rock = document.getElementById("rock")
 rock.addEventListener('click',(event) => {
     humanChoice = "rock";
+    computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);
 })
 
 let paper = document.getElementById("paper")
 paper.addEventListener('click',(event) => {
     humanChoice = "paper";
+    computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);
 })
 
 let scissors = document.getElementById("scissors")
 scissors.addEventListener('click',(event) => {
     humanChoice = "scissors";
+    computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);
 });
 
