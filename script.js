@@ -63,6 +63,9 @@ function playRound(humanChoice,computerChoice,para,score){
         computerScore++;
         score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
+    else if (humanChoice == computerChoice){
+        para.textContent = "Draw";
+    }
     return humanScore,computerScore;
 }
 
@@ -76,7 +79,15 @@ rock.addEventListener('click',(event) => {
     let score = document.createElement("p")
     div.appendChild(para)
     div.appendChild(score);
+    if (humanScore == "5"){
+        para.textContent = "HUMAN WINS"
+    }
+    else if (computerScore == "5"){
+        para.textContent = "COMPUTER WINS"
+    }
+    else{
     playRound(humanChoice,computerChoice,para,score);
+    }
 })
 
 let paper = document.getElementById("paper")
@@ -87,7 +98,15 @@ paper.addEventListener('click',(event) => {
     let score = document.createElement("p");
     div.appendChild(para);
     div.appendChild(score)
+    if (humanScore == "5"){
+        para.textContent = "HUMAN WINS"
+    }
+    else if (computerScore == "5"){
+        para.textContent = "COMPUTER WINS"
+    }
+    else{
     playRound(humanChoice,computerChoice,para,score);
+    }
 })
 
 let scissors = document.getElementById("scissors")
@@ -98,7 +117,15 @@ scissors.addEventListener('click',(event) => {
     let score = document.creeateElement("p");
     div.appendChild(para);
     div.appendChild(score);
+    if (humanScore == "5"){
+        para.textContent = "HUMAN WINS"
+    }
+    else if (computerScore == "5"){
+        para.textContent = "COMPUTER WINS"
+    }
+    else{
     playRound(humanChoice,computerChoice,para,score);
+    }
 });
 
 
