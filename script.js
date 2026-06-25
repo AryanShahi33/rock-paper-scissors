@@ -31,33 +31,37 @@ function playRound(humanChoice,computerChoice,para,score){
         para.textContent = "You win!,rock Beats scissors ";
         // Increment the score of the winner
         humanScore++;
-        score.textContent = humanScore;
-        score.textContent = computerScore;
+        score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
     else if (humanChoice == "scissors" && computerChoice == "paper")
     {
         para.textContent = "You win!, scissors beats paper \n";
         humanScore++;
+        score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
     else if (humanChoice == "paper" && computerChoice == "rock")
     {
         para.textContent = "You win!, paper beats rock \n";
         humanScore++;
+        score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
     else if (humanChoice == "rock" && computerChoice == "paper")
     {   
         para.textContent = "You lose!, paper beats rock \n";
         computerScore++;
+        score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
     else if (humanChoice == "scissors" && computerChoice == "rock")
     {
         para.textContent = "You lose!, rock beats scissors \n";
         computerScore++;
+        score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
     else if (humanChoice == "paper" && computerChoice == "scissors")
     {
         para.textContent = "You lose!, scissors beats paper";
         computerScore++;
+        score.textContent = "humanScore: " + humanScore + " computerScore:"+computerScore;
     }
     return humanScore,computerScore;
 }
