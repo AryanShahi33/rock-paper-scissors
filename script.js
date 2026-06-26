@@ -114,7 +114,7 @@ scissors.addEventListener('click',(event) => {
     humanChoice = "scissors";
     computerChoice = getComputerChoice();
     let para = document.createElement("p");
-    let score = document.creeateElement("p");
+    let score = document.createElement("p");
     div.appendChild(para);
     div.appendChild(score);
     if (humanScore == "5"){
